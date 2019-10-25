@@ -33,7 +33,7 @@ starships.forEach(function(starships) {
     
     imgError(pic) */
 
-    function testImage(URL) {
+    /* function testImage(URL) {
         var tester=new Image();
         if (tester.onload=imageFound) {
             return;
@@ -42,7 +42,7 @@ starships.forEach(function(starships) {
             return;
         }
     }
-    testImage(pic.src)
+    testImage(pic.src) */
     shipDiv.appendChild(pic)
 
     mainArea.appendChild(shipDiv)
