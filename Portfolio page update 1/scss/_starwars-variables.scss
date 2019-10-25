@@ -6,6 +6,20 @@ $fontColor: #00007F;
 $gutter: 2%;
 $dblgutter: (2 * $gutter);
 
-$defaultFont: 'PT Sans Narrow', sans-serif;
+$defaultFont: 'Orbitron', sans-serif;;
 $normalWeight:400;
 $boldWeight:700;
+
+/* The Galactic Empire favored muted colors of gray, white and black
+Empire colors: */
+$mainColorEm: #111;
+$nextColorEm: #777;
+$textColorEm: #BBB;
+$accentEm: #FFF;
+
+/* The Alliance Starbird most often appeared in bright red or blue but was also sometimes displayed in yellow, black, or gray.
+Alliance colors: */
+$mainColorAl: #111;
+$nextColorAl: #777;
+$textColorAl: #BBB;
+$accentAl: #FFF;

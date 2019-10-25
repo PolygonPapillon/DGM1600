@@ -16,28 +16,50 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* end of reset */
+/* The Galactic Empire favored muted colors of gray, white and black
+Empire colors: */
+/* The Alliance Starbird most often appeared in bright red or blue but was also sometimes displayed in yellow, black, or gray.
+Alliance colors: */
 /* Prevent adjustments of font size afer orientation changes in IE on Windows Phone and in iOS */
 html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
 /* apply a natural box layout model to all elements */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-/* body stlyings */
-body { font-family: "PT Sans Narrow", sans-serif; font-weight: 400; font-size: 16px; }
+/* ------------------------- body stlyings ------------------------- */
+body { font-family: "Orbitron", sans-serif; font-weight: 400; font-size: 16px; background-color: #111; color: #BBB; }
+
+/* ------------------------- header ------------------------- */
+header { padding-top: 60px; margin: 20px 2%; font-size: 2rem; }
+
+/* ------------------------- navigation ------------------------- */
+div#navWrapper { background-color: #FFF; width: 100%; }
+
+nav#navbar { position: fixed; top: 0px; width: 100%; }
+
+nav { background-color: #FFF; }
+nav ul li { float: left; width: 25%; border-right: 1px solid rgba(0, 0, 0, 0.3); border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+nav ul li:last-child { border-right: 1px solid rgba(0, 0, 0, 0.3); }
+nav ul li a { display: block; text-align: center; font-weight: 700; padding: .5rem 0; color: #6f6f6f; text-decoration: none; transition: background 0.75s ease, color 0.75s ease; }
+nav ul li a:hover { color: #777; background-color: #111; }
+nav ul li.active a { background-color: #515151; }
+
+/* ------------------------- main ------------------------- */
+main { margin: 25px 4%; display: flex; flex-direction: column; justify-content: space-around; align-content: flex-end; align-items: stretch; flex-flow: wrap; }
+main div { margin: 2%; text-align: center; width: 200px; border: #FFF 1px solid; }
+main div img { width: 100%; }
+main div h1 { padding: 10px; font-size: 1.1rem; }
+
+/* ------------------------- footer ------------------------- */
+div#footerWrapper { background-color: #111; }
+
+footer { width: 100%; border-top: 5px solid #FFF; }
+footer p { text-align: center; color: #BBB; padding: .75rem 0; font-size: .9rem; }
+
+/* Stay open (don't collapse) */
+.stayopen:after { content: ""; display: table; clear: both; }
 
 /* media query */
-@media only screen and (min-width: 35rem) { /* Prevent adjustments of font size afer orientation changes in IE on Windows Phone and in iOS */
-  html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-  /* apply a natural box layout model to all elements */
-  * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-  /* body stlyings */
-  body { font-family: "PT Sans Narrow", sans-serif; font-weight: 400; font-size: 16px; } }
 /* end media query */
 /* media query */
-@media only screen and (min-width: 60rem) { /* Prevent adjustments of font size afer orientation changes in IE on Windows Phone and in iOS */
-  html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-  /* apply a natural box layout model to all elements */
-  * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-  /* body stlyings */
-  body { font-family: "PT Sans Narrow", sans-serif; font-weight: 400; font-size: 16px; } }
 /* end media query */
