@@ -1,0 +1,117 @@
+/* Prevent adjustments of font size afer orientation changes in IE on Windows Phone and in iOS */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%}
+
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/* ------------------------- body stlyings ------------------------- */
+body {
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    font-size: 16px;
+    background-color: $mainColorEm;
+    color: $textColorEm;
+}
+
+/* ------------------------- header ------------------------- */
+header {
+    padding-top: 60px;
+    margin: 20px $gutter;
+    font-size: 2rem;
+    display: flex;
+}
+
+
+
+/* ------------------------- navigation ------------------------- */
+div#navWrapper {background-color: $accentEm; width: 100%;}
+nav#navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+nav {
+
+    background-color: $accentEm;
+    ul li {
+        float: left;
+        width: 25%;
+        border-right: 1px solid rgba(0,0,0,0.3);
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+        
+    }
+    ul li:last-child {border-right: 1px solid rgba(0,0,0,0.3);}
+    ul li a {
+        display: block;
+        text-align: center;
+        font-weight: $boldWeight;
+        padding: .5rem 0;
+        color: darken($textColorEm, 30%);
+        text-decoration: none;
+        transition: background 0.75s ease, color 0.75s ease;
+    }
+    
+
+    ul li a:hover {
+        color: $nextColorEm;
+        background-color: $mainColorEm;
+    }
+    ul li.active a  {
+        background-color: darken($nextColorEm, 15%);
+    }    
+    
+    
+} //end nav
+
+
+/* ------------------------- main ------------------------- */
+main {
+    margin: 25px $dblgutter;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-end;
+    align-items: stretch;
+    flex-flow: wrap;
+    div {
+        margin: $gutter;
+        text-align: center;
+        width: 200px;
+        border: $accentAl 1px solid;
+        img {
+            width: 100%;
+        }
+        h1 {
+            padding: 10px;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+
+
+
+/* ------------------------- footer ------------------------- */
+div#footerWrapper {background-color: $mainColorEm;}
+footer {
+    width: 100%;
+    border-top: 5px solid $accentAl;
+    
+    p {
+        text-align: center;
+        color: $textColorEm;
+        padding: .75rem 0;
+        font-size: .9rem;
+    }
+}
+
+
+
+
+/* Stay open (don't collapse) */
+.stayopen:after {
+    content: "";
+    display: table;
+    clear: both;
+}
