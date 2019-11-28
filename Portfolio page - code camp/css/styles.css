@@ -1,1 +1,89 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}*{-webkit-box-sizing:border-box;box-sizing:border-box}body{font-family:"PT Sans Narrow",sans-serif;font-weight:400;font-size:16px}div#navWrapper{background-color:#E3E1DE;width:100%}nav#navbar{position:fixed;top:0px;width:100%}nav{background-color:#E3E1DE}nav ul li{float:left;width:25%;border-right:1px solid rgba(0,0,0,0.3);border-bottom:1px solid rgba(0,0,0,0.3)}nav ul li:last-child{border-right:1px solid rgba(0,0,0,0.3)}nav ul li a{display:block;text-align:center;font-weight:700;padding:.5rem 0;color:#3642D8;text-decoration:none;-webkit-transition:background 0.75s ease, color 0.75s ease;transition:background 0.75s ease, color 0.75s ease}nav ul li a:hover{color:#E3E1DE;background-color:#3642D8}nav ul li.active a{background-color:#c0bbb5}main div#welcome-section{width:100%;height:100vh;background-image:url(../images/early-world-map.jpg);background-size:cover;background-repeat:no-repeat;background-position:center}main div#welcome-section h1{text-align:center;padding-top:40%;color:#E3E1DE;text-shadow:-8px 8px 7px #00007F;font-size:3.5rem}main div#projects{margin:2rem .5rem}main div.blocks{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center}main div.blocks a{text-decoration:none;margin:.2rem;padding:0}main figure.project-tile{margin:.5rem;max-width:300px}main figure.project-tile img{width:100%}main figure.project-tile figcaption{text-align:center;color:#1f29a2}main h1{font-size:2rem;margin:1rem 0 0 2%;color:#3642D8}main p{line-height:120%;color:#00007F;margin:1rem}main hr.fadeAway{background:-webkit-gradient(linear, left top, right top, from(#ffc900), to(rgba(255,201,0,0)));background:linear-gradient(to right, #ffc900 0%, rgba(255,201,0,0) 100%);height:3px;border:none;margin:1rem 2%}div#footerWrapper{background-color:#3642D8}footer{width:100%;border-top:5px solid #FFC900}footer p{text-align:center;color:#E3E1DE;padding:.75rem 0;font-size:.9rem}.stayopen:after{content:"";display:table;clear:both}@media only screen and (min-width: 60rem){body{padding:0;background-image:url(../images/sayagata-400px-pattern.png)}header,nav,main,footer{max-width:75rem;margin:0 auto}div#wrapper{max-width:75rem;margin:0 auto;-webkit-box-shadow:0 0 10px #000;box-shadow:0 0 10px #000;background-color:#FFF}nav ul{margin-left:2%;border-left:1px solid rgba(0,0,0,0.3)}nav ul li{width:auto}nav ul li a{padding:.5rem 1rem}}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* Prevent adjustments of font size afer orientation changes in IE on Windows Phone and in iOS */
+html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+/* apply a natural box layout model to all elements */
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* body stlyings */
+body { font-family: "PT Sans Narrow", sans-serif; font-weight: 400; font-size: 16px; }
+
+/* ------------------------- navigation ------------------------- */
+div#navWrapper { background-color: #E3E1DE; width: 100%; }
+
+nav#navbar { position: fixed; top: 0px; width: 100%; }
+
+nav { background-color: #E3E1DE; }
+
+nav ul li { float: left; width: 25%; border-right: 1px solid rgba(0, 0, 0, 0.3); border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+
+nav ul li:last-child { border-right: 1px solid rgba(0, 0, 0, 0.3); }
+
+nav ul li a { display: block; text-align: center; font-weight: 700; padding: .5rem 0; color: #3642D8; text-decoration: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
+
+nav ul li a:hover { color: #E3E1DE; background-color: #3642D8; }
+
+nav ul li.active a { background-color: #c0bbb5; }
+
+/* ------------------------- main ------------------------- */
+main div#welcome-section { width: 100%; height: 100vh; background-image: url(../images/early-world-map.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+main div#welcome-section h1 { text-align: center; padding-top: 40%; color: #E3E1DE; text-shadow: -8px 8px 7px #00007F; font-size: 3.5rem; }
+
+main div#projects { margin: 2rem .5rem; }
+
+main div.blocks { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -ms-flex-line-pack: center; align-content: center; }
+
+main div.blocks a { text-decoration: none; margin: .2rem; padding: 0; }
+
+main figure.project-tile { margin: .5rem; max-width: 300px; }
+
+main figure.project-tile img { width: 100%; }
+
+main figure.project-tile figcaption { text-align: center; color: #1f29a2; }
+
+main h1 { font-size: 2rem; margin: 1rem 0 0 2%; color: #3642D8; }
+
+main p { line-height: 120%; color: #00007F; margin: 1rem; }
+
+main hr.fadeAway { background: -webkit-gradient(linear, left top, right top, from(#ffc900), to(rgba(255, 201, 0, 0))); background: linear-gradient(to right, #ffc900 0%, rgba(255, 201, 0, 0) 100%); height: 3px; border: none; margin: 1rem 2%; }
+
+/* ------------------------- footer ------------------------- */
+div#footerWrapper { background-color: #3642D8; }
+
+footer { width: 100%; border-top: 5px solid #FFC900; }
+
+footer p { text-align: center; color: #E3E1DE; padding: .75rem 0; font-size: .9rem; }
+
+/* Stay open (don't collapse) */
+.stayopen:after { content: ""; display: table; clear: both; }
+
+/* media query */
+/* end media query */
+/* media query */
+@media only screen and (min-width: 60rem) { body { padding: 0; background-image: url(../images/sayagata-400px-pattern.png); }
+  header, nav, main, footer { max-width: 75rem; margin: 0 auto; }
+  div#wrapper { max-width: 75rem; margin: 0 auto; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000; background-color: #FFF; }
+  nav ul { margin-left: 2%; border-left: 1px solid rgba(0, 0, 0, 0.3); }
+  nav ul li { width: auto; }
+  nav ul li a { padding: .5rem 1rem; } }
+
+/* end media query */
