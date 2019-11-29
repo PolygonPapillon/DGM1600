@@ -69,8 +69,3 @@ footer p { text-align: center; color: #BBB; padding: .75rem 0; font-size: .9rem;
 
 /* Stay open (don't collapse) */
 .stayopen:after { content: ""; display: table; clear: both; }
-
-/* media query */
-/* end media query */
-/* media query */
-/* end media query */

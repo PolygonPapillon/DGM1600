@@ -1,41 +1,150 @@
-.scene {
-  width: 200px;
-  height: 260px;
-  border: 1px solid #ccc;
-  margin: 40px 0;
-  perspective: 600px;
+/* Prevent adjustments of font size afer orientation changes in IE on Windows Phone and in iOS */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
-.card {
+/* apply a natural box layout model to all elements */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* body stlyings */
+body {
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  font-size: 16px;
+}
+
+/* ------------------------- navigation ------------------------- */
+div#navWrapper {
+  background-color: $pokeSecondary;
   width: 100%;
-  height: 100%;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  position: relative;
 }
-
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-
-.card__face {
-  position: absolute;
+nav#navbar {
+  position: fixed;
+  top: 0px;
   width: 100%;
-  height: 100%;
-  line-height: 260px;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-size: 40px;
-  backface-visibility: hidden;
+}
+nav {
+  background-color: $pokeSecondary;
+  ul li {
+    float: left;
+    width: 25%;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  ul li:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  ul li a {
+    display: block;
+    text-align: center;
+    font-weight: $boldWeight;
+    padding: 0.5rem 0;
+    color: $pokePrimary;
+    text-decoration: none;
+    transition: background 0.75s ease, color 0.75s ease;
+  }
+
+  ul li a:hover {
+    color: $pokeSecondary;
+    background-color: $pokePrimary;
+  }
+  ul li.active a {
+    background-color: darken($pokeSecondary, 15%);
+  }
+} //end nav
+
+/* ------------------------- main ------------------------- */
+main {
+  h1 {
+    font-size: 2rem;
+    margin: 1rem 0 0 $gutter;
+    color: $pokePrimary;
+  }
+
+  p {
+    line-height: 120%;
+    color: $fontColor;
+    margin: 1rem;
+  }
+
+  hr.fadeAway {
+    background: linear-gradient(
+      to right,
+      rgba(255, 201, 0, 1) 0%,
+      rgba(255, 201, 0, 0) 100%
+    );
+    height: 3px;
+    border: none;
+    margin: 1rem $gutter;
+  }
+
+  .scene {
+    width: 200px;
+    height: 260px;
+    border: 1px solid #ccc;
+    margin: 40px 0;
+    perspective: 600px;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+
+  .card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 260px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    backface-visibility: hidden;
+  }
+
+  .card__face--front {
+    background: red;
+  }
+
+  .card__face--back {
+    background: blue;
+    transform: rotateY(180deg);
+  }
+} // end main
+
+/* ------------------------- footer ------------------------- */
+div#footerWrapper {
+  background-color: $pokePrimary;
+}
+footer {
+  width: 100%;
+  border-top: 5px solid $pokeAccent;
+
+  p {
+    text-align: center;
+    color: $pokeSecondary;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+  }
 }
 
-.card__face--front {
-  background: red;
-}
-
-.card__face--back {
-  background: blue;
-  transform: rotateY(180deg);
+/* Stay open (don't collapse) */
+.stayopen:after {
+  content: "";
+  display: table;
+  clear: both;
 }
