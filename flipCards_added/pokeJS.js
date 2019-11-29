@@ -18,7 +18,7 @@ const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/")
 .then(data => {
   for (const pokemon of data.results) {
     getAPIData(pokemon.url).then(pokedata => {
-      console.log(pokedata)
+      populateDOM(pokedata)
     })
   }
 })
@@ -44,8 +44,7 @@ function populateDOM(eachPokemon) {
     pokeDiv.appendChild(pokeType)
 
     mainArea.appendChild(pokeDiv)
-  })
-}
+  }
 
 function getPokePic(pokeID) {
   if (pokeID < 1 || pokeID > 964) {
