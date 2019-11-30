@@ -54,7 +54,7 @@ nav ul li.active a { background-color: #515151; }
 /* ------------------------- main ------------------------- */
 main { margin: 25px 4%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: distribute; justify-content: space-around; -ms-flex-line-pack: end; align-content: flex-end; -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; -ms-flex-flow: wrap; flex-flow: wrap; }
 
-main div { margin: 2%; text-align: center; width: 200px; border: #FFF 1px solid; }
+main div { margin: 2%; text-align: center; width: 200px; border: yellow 1px solid; }
 
 main div img { width: 100%; }
 
@@ -63,7 +63,7 @@ main div h1 { padding: 10px; font-size: 1.1rem; }
 /* ------------------------- footer ------------------------- */
 div#footerWrapper { background-color: #111; }
 
-footer { width: 100%; border-top: 5px solid #FFF; }
+footer { width: 100%; border-top: 5px solid yellow; }
 
 footer p { text-align: center; color: #BBB; padding: .75rem 0; font-size: .9rem; }
 

@@ -30,17 +30,10 @@ nav#navbar {
 }
 nav {
   background-color: $pokeSecondary;
-  ul li {
-    float: left;
-    width: 25%;
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  }
-  ul li:last-child {
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
-  }
-  ul li a {
-    display: block;
+
+  
+  button {
+    //display: block;
     text-align: center;
     font-weight: $boldWeight;
     padding: 0.5rem 0;
@@ -49,17 +42,16 @@ nav {
     transition: background 0.75s ease, color 0.75s ease;
   }
 
-  ul li a:hover {
+  button:hover {
     color: $pokeSecondary;
     background-color: $pokePrimary;
   }
-  ul li.active a {
-    background-color: darken($pokeSecondary, 15%);
-  }
+ 
 } //end nav
 
 /* ------------------------- main ------------------------- */
 main {
+
   h1 {
     font-size: 2rem;
     margin: 1rem 0 0 $gutter;
@@ -68,7 +60,7 @@ main {
 
   p {
     line-height: 120%;
-    color: $fontColor;
+    color: $pokeFontColor;
     margin: 1rem;
   }
 
@@ -80,14 +72,14 @@ main {
     );
     height: 3px;
     border: none;
-    margin: 1rem $gutter;
+    margin: 2rem $gutter;
   }
 
   .scene {
     width: 200px;
     height: 260px;
-    border: 1px solid #ccc;
-    margin: 40px 0;
+    border: 1px solid $pokeAccent;
+    margin: 40px $gutter;
     perspective: 600px;
   }
 
@@ -109,7 +101,7 @@ main {
     width: 100%;
     height: 100%;
     line-height: 260px;
-    color: white;
+    color: pokeFontColor;
     text-align: center;
     font-weight: bold;
     font-size: 40px;
@@ -117,11 +109,11 @@ main {
   }
 
   .card__face--front {
-    background: red;
+    background: $pokeSecondary;
   }
 
   .card__face--back {
-    background: blue;
+    background: $pokePrimary;
     transform: rotateY(180deg);
   }
 } // end main

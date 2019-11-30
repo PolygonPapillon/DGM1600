@@ -29,14 +29,14 @@ html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 * { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 /* ------------------------- body stlyings ------------------------- */
-body { font-family: "Orbitron", sans-serif; font-weight: 400; font-size: 16px; background-color: #111; color: #BBB; }
+body { font-family: "Orbitron", sans-serif; font-weight: 400; font-size: 16px; background-color: red; color: blue; }
 
 /* ------------------------- navigation ------------------------- */
-div#navWrapper { background-color: #FFF; width: 100%; }
+div#navWrapper { background-color: yellow; width: 100%; }
 
 nav#navbar { position: fixed; top: 0px; width: 100%; }
 
-nav { background-color: #FFF; }
+nav { background-color: yellow; }
 
 nav ul li { float: left; width: 25%; border-right: 1px solid rgba(0, 0, 0, 0.3); border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
 

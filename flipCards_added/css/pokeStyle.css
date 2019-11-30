@@ -38,30 +38,24 @@ nav#navbar { position: fixed; top: 0px; width: 100%; }
 
 nav { background-color: red; }
 
-nav ul li { float: left; width: 25%; border-right: 1px solid rgba(0, 0, 0, 0.3); border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+nav button { text-align: center; font-weight: 700; padding: 0.5rem 0; color: blue; text-decoration: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
 
-nav ul li:last-child { border-right: 1px solid rgba(0, 0, 0, 0.3); }
-
-nav ul li a { display: block; text-align: center; font-weight: 700; padding: 0.5rem 0; color: blue; text-decoration: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
-
-nav ul li a:hover { color: red; background-color: blue; }
-
-nav ul li.active a { background-color: #b30000; }
+nav button:hover { color: red; background-color: blue; }
 
 /* ------------------------- main ------------------------- */
 main h1 { font-size: 2rem; margin: 1rem 0 0 2%; color: blue; }
 
-main p { line-height: 120%; color: #00007F; margin: 1rem; }
+main p { line-height: 120%; color: orange; margin: 1rem; }
 
-main hr.fadeAway { background: -webkit-gradient(linear, left top, right top, from(#ffc900), to(rgba(255, 201, 0, 0))); background: linear-gradient(to right, #ffc900 0%, rgba(255, 201, 0, 0) 100%); height: 3px; border: none; margin: 1rem 2%; }
+main hr.fadeAway { background: -webkit-gradient(linear, left top, right top, from(#ffc900), to(rgba(255, 201, 0, 0))); background: linear-gradient(to right, #ffc900 0%, rgba(255, 201, 0, 0) 100%); height: 3px; border: none; margin: 2rem 2%; }
 
-main .scene { width: 200px; height: 260px; border: 1px solid #ccc; margin: 40px 0; -webkit-perspective: 600px; perspective: 600px; }
+main .scene { width: 200px; height: 260px; border: 1px solid grey; margin: 40px 2%; -webkit-perspective: 600px; perspective: 600px; }
 
 main .card { width: 100%; height: 100%; -webkit-transition: -webkit-transform 1s; transition: -webkit-transform 1s; transition: transform 1s; transition: transform 1s, -webkit-transform 1s; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; cursor: pointer; position: relative; }
 
 main .card.is-flipped { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
 
-main .card__face { position: absolute; width: 100%; height: 100%; line-height: 260px; color: white; text-align: center; font-weight: bold; font-size: 40px; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+main .card__face { position: absolute; width: 100%; height: 100%; line-height: 260px; color: pokeFontColor; text-align: center; font-weight: bold; font-size: 40px; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 
 main .card__face--front { background: red; }
 

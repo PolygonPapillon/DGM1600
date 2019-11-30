@@ -14,8 +14,7 @@ async function getAPIData(url) {
   }
 }
 
-const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/")
-.then(data => {
+const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/").then(data => {
   for (const pokemon of data.results) {
     getAPIData(pokemon.url).then(pokedata => {
       populateDOM(pokedata)
@@ -26,34 +25,66 @@ const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/")
 let mainArea = document.querySelector("main")
 
 function populateDOM(eachPokemon) {
+  let pokeScene = document.getElementsByClassName("scene")
+  let pokeCard = document.getElementsByClassName("card")
   
-    let pokeDiv = document.createElement("div")
-    let pokePic = document.createElement("img")
-    let pokeName = document.createElement("h1")
-    let pokeType = document.createElement("p")
 
-    pokeName.textContent = eachPokemon.name
-    pokeType.textContent = eachPokemon.type
+  pokeCard.appendChild(pokeFront)
+  
+  pokeScene.appendChild(pokeCard)
 
-    let pokeNum = getPokePic(eachPokemon.id)
 
-    pokePic.src = "../../pokemon_json_files/${pokeNum}.png"
 
-    pokeDiv.appendChild(pokePic)
-    pokeDiv.appendChild(pokeName)
-    pokeDiv.appendChild(pokeType)
+  mainArea.appendChild(pokeCard)
 
-    mainArea.appendChild(pokeDiv)
-  }
+  pokeCard.addEventListener("click", function() {
+    pokeCard.classList.toggle("is-flipped")
+  })
+
+}
 
 function getPokePic(pokeID) {
   if (pokeID < 1 || pokeID > 964) {
     return "Not a valid pokemon number!"
   } else if (pokeID > 0 && pokeID < 10) {
     return "00${pokeID}"
-  } else if (pokeID > 9 && pokeID >100) {
+  } else if (pokeID > 9 && pokeID > 100) {
     return "0${pokeID}"
   } else {
     return pokeID
   }
+}
+
+
+
+function makeCardFront() {
+
+  let pokeFront = document.getElementsByClassName("card__face--front")
+  
+  let pokePic = document.createElement("img")
+  let pokeName = document.createElement("h1")
+  let pokeType = document.createElement("p")
+
+
+
+  pokeName.textContent = eachPokemon.name
+  pokeType.textContent = eachPokemon.type
+
+  let pokeNum = getPokePic(eachPokemon.id)
+
+  pokePic.src = "../pokemon_json_files/${pokeNum}.png"
+
+  pokeFront.appendChild(pokePic)
+  pokeFront.appendChild(pokeName)
+  pokeFront.appendChild(pokeType)
+
+}
+
+
+function makeCardBack() {
+  let pokeBack = document.getElementsByClassName("card__face--back")
+
+
+  pokeCard.appendChild(pokeBack)
+
 }
