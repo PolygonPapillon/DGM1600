@@ -18,26 +18,34 @@ body {
   font-size: 16px;
 }
 
+/* ------------------------- header ------------------------- */
+header {
+  
+  h1 {
+    font-size: 2rem;
+    padding: 1rem $gutter;
+    color: $pokePrimary;
+  }
+}
+
 /* ------------------------- navigation ------------------------- */
 div#navWrapper {
   background-color: $pokeSecondary;
-  width: 100%;
+  //width: 100%;
 }
-nav#navbar {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-}
+
 nav {
-  background-color: $pokeSecondary;
+  background-color: $pokeAccent;
 
   
   button {
     //display: block;
+    margin: 20px;
     text-align: center;
     font-weight: $boldWeight;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     color: $pokePrimary;
+    border-radius: 10px;
     text-decoration: none;
     transition: background 0.75s ease, color 0.75s ease;
   }
@@ -133,6 +141,9 @@ footer {
     font-size: 0.9rem;
   }
 }
+
+
+
 
 /* Stay open (don't collapse) */
 .stayopen:after {

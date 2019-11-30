@@ -18,10 +18,12 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* end of reset */
+/* Star Wars specific variables*/
 /* The Galactic Empire favored muted colors of gray, white and black
 Empire colors: */
 /* The Alliance Starbird most often appeared in bright red or blue but was also sometimes displayed in yellow, black, or gray.
 Alliance colors: */
+/* Pokemon Card specific variables*/
 /* Prevent adjustments of font size afer orientation changes in IE on Windows Phone and in iOS */
 html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 

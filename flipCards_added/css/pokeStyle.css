@@ -18,10 +18,12 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* end of reset */
+/* Star Wars specific variables*/
 /* The Galactic Empire favored muted colors of gray, white and black
 Empire colors: */
 /* The Alliance Starbird most often appeared in bright red or blue but was also sometimes displayed in yellow, black, or gray.
 Alliance colors: */
+/* Pokemon Card specific variables*/
 /* Prevent adjustments of font size afer orientation changes in IE on Windows Phone and in iOS */
 html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
@@ -31,14 +33,15 @@ html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 /* body stlyings */
 body { font-family: "PT Sans Narrow", sans-serif; font-weight: 400; font-size: 16px; }
 
+/* ------------------------- header ------------------------- */
+header h1 { font-size: 2rem; padding: 1rem 2%; color: blue; }
+
 /* ------------------------- navigation ------------------------- */
-div#navWrapper { background-color: red; width: 100%; }
+div#navWrapper { background-color: red; }
 
-nav#navbar { position: fixed; top: 0px; width: 100%; }
+nav { background-color: grey; }
 
-nav { background-color: red; }
-
-nav button { text-align: center; font-weight: 700; padding: 0.5rem 0; color: blue; text-decoration: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
+nav button { margin: 20px; text-align: center; font-weight: 700; padding: 0.5rem; color: blue; border-radius: 10px; text-decoration: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
 
 nav button:hover { color: red; background-color: blue; }
 
@@ -70,3 +73,12 @@ footer p { text-align: center; color: red; padding: 0.75rem 0; font-size: 0.9rem
 
 /* Stay open (don't collapse) */
 .stayopen:after { content: ""; display: table; clear: both; }
+
+/* media query */
+@media only screen and (min-width: 60rem) { body { padding: 0; background-image: url(../images/sayagata-400px-pattern.png); }
+  header, nav, main, footer { max-width: 75rem; margin: 0 auto; }
+  div#wrapper { max-width: 75rem; margin: 0 auto; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000; background-color: #FFF; height: 100vh; }
+  header { margin-top: 0px; }
+  footer { margin-bottom: 0px; } }
+
+/* end media query */
