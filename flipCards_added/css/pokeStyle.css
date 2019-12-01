@@ -34,23 +34,25 @@ html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { font-family: "PT Sans Narrow", sans-serif; font-weight: 400; font-size: 16px; }
 
 /* ------------------------- header ------------------------- */
-header h1 { font-size: 2rem; padding: 1rem 2%; color: blue; }
+header h1 { font-size: 2.2rem; padding: 1.5rem 2%; color: blue; }
 
 /* ------------------------- navigation ------------------------- */
 div#navWrapper { background-color: red; }
 
 nav { background-color: grey; }
 
-nav button { margin: 20px; text-align: center; font-weight: 700; padding: 0.5rem; color: blue; border-radius: 10px; text-decoration: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
+nav button { margin: 10px 2%; text-align: center; font-weight: 700; padding: 0.5rem; color: blue; border-radius: 10px; text-decoration: none; background-color: red; border: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
 
 nav button:hover { color: red; background-color: blue; }
 
 /* ------------------------- main ------------------------- */
-main h1 { font-size: 2rem; margin: 1rem 0 0 2%; color: blue; }
+main h1 { font-size: 4rem; margin: 1rem 2%; padding: 10px; color: blue; }
 
 main p { line-height: 120%; color: orange; margin: 1rem; }
 
-main hr.fadeAway { background: -webkit-gradient(linear, left top, right top, from(#ffc900), to(rgba(255, 201, 0, 0))); background: linear-gradient(to right, #ffc900 0%, rgba(255, 201, 0, 0) 100%); height: 3px; border: none; margin: 2rem 2%; }
+main img { max-width: 180px; }
+
+main hr.fadeAway { background: -webkit-gradient(linear, left top, right top, from(#ffc900), to(rgba(255, 201, 0, 0))); background: linear-gradient(to right, #ffc900 0%, rgba(255, 201, 0, 0) 100%); height: 4px; border: none; margin: 2rem 2%; }
 
 main .scene { width: 200px; height: 260px; border: 1px solid grey; margin: 40px 2%; -webkit-perspective: 600px; perspective: 600px; }
 
@@ -58,11 +60,11 @@ main .card { width: 100%; height: 100%; -webkit-transition: -webkit-transform 1s
 
 main .card.is-flipped { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
 
-main .card__face { position: absolute; width: 100%; height: 100%; line-height: 260px; color: pokeFontColor; text-align: center; font-weight: bold; font-size: 40px; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+main .card__face { position: absolute; width: 100%; height: 100%; color: pokeFontColor; text-align: center; font-weight: bold; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 
 main .card__face--front { background: red; }
 
-main .card__face--back { background: blue; -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
+main .card__face--back { background: grey; -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
 
 /* ------------------------- footer ------------------------- */
 div#footerWrapper { background-color: blue; }
