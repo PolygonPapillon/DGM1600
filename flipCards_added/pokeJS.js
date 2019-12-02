@@ -7,14 +7,19 @@ request.send();
 request.onload = function() {
   let pokedata = request.response;
   console.log(pokedata);
+
   populateDOM(pokedata);
-  loadButton(pokedata);
 };
 
 let cardArea = document.querySelector(".cardsHere");
 
 function populateDOM(allPokemon) {
   for (let i = 0; i < 30; i++) {
+    makeCard(allPokemon, i);
+  }
+}
+
+  function makeCard(pokemon, iCount) {
     let pokeScene = document.createElement("section");
     let pokeCard = document.createElement("article");
     let pokeFront = document.createElement("div");
@@ -25,8 +30,8 @@ function populateDOM(allPokemon) {
     pokeFront.setAttribute("class", "card__face card__face--front");
     pokeBack.setAttribute("class", "card__face card__face--back");
 
-    makeCardFront(pokeFront, allPokemon, i);
-    makeCardBack(pokeBack, allPokemon, i);
+    makeCardFront(pokeFront, pokemon, iCount);
+    makeCardBack(pokeBack, pokemon, iCount);
 
     pokeCard.appendChild(pokeFront);
     pokeCard.appendChild(pokeBack);
@@ -39,7 +44,7 @@ function populateDOM(allPokemon) {
       pokeCard.classList.toggle("is-flipped");
     });
   }
-}
+
 
 function makeCardFront(pokeFront, aPokemon, arrayCount) {
   let pokePic = document.createElement("img");
@@ -85,7 +90,7 @@ function makeCardBack(pokeBack, aPokemon, arrayCount) {
   }
   pokeBack.appendChild(typeList);
 
-  otherNames.textContent = aPokemon[arrayCount].name.english + "'s name in:";
+  otherNames.textContent = aPokemon[arrayCount].name.english + "'s name in";
   frenchName.textContent = "French is:     " + aPokemon[arrayCount].name.french;
   japaneseName.textContent =
     "Japanese is:     " + aPokemon[arrayCount].name.japanese;
@@ -96,7 +101,7 @@ function makeCardBack(pokeBack, aPokemon, arrayCount) {
 }
 
 function getPokePic(pokeID) {
-  if (pokeID < 1 || pokeID > 964) {
+  if (pokeID < 1 || pokeID > 809) {
     return "Not a valid pokemon number!";
   } else if (pokeID > 0 && pokeID < 10) {
     return `00${pokeID}`;
@@ -106,3 +111,26 @@ function getPokePic(pokeID) {
     return pokeID;
   }
 }
+
+document.querySelector(".anotha").addEventListener("click", () => {
+  const aPokeNumber = Number(
+    window.prompt(
+      "Type the number of a Pokemon you wish to see on a card (1-809)",
+      ""
+    )
+  );
+  if (!aPokeNumber > 0 && !aPokeNumber < 809) {
+    alert("That Pokemon does not exist. Please enter a different one.");
+  }
+  let requestURL =
+    "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json";
+  let request = new XMLHttpRequest();
+  request.open("GET", requestURL);
+  request.responseType = "json";
+  request.send();
+  request.onload = function() {
+    let pokedata = request.response;
+    let arrayCount = aPokeNumber - 1;
+    makeCard(pokedata, arrayCount);
+  };
+});

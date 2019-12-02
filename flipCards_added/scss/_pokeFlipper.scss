@@ -21,7 +21,8 @@ body {
 /* ------------------------- header ------------------------- */
 header {
   h1 {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
+    font-weight: $boldWeight;
     padding: 1.5rem $gutter;
     color: $pokePrimary;
   }
@@ -36,35 +37,46 @@ div#navWrapper {
 nav {
   background-color: $pokeAccent;
 
-  button {
-    //display: block;
-    margin: 10px $gutter;
+  ul li {
+    float: left;
+    width: 25%;
+    margin-left: $gutter;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  ul li:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  ul li a {
+    display: block;
     text-align: center;
-    font-size: .8rem;
     font-weight: $boldWeight;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     color: lighten($pokePrimary, 25%);
-    border-radius: 10px;
     text-decoration: none;
+    font-size: 1rem;
     background-color: darken($pokeSecondary, 25%);
-    border: none;
     transition: background 0.75s ease, color 0.75s ease;
   }
 
-  button:hover {
+  ul li a:hover {
     color: lighten($pokeFontColor, 25%);
     background-color: darken($pokePrimary, 15%);
+  }
+  ul li.active a {
+    background-color: darken($pokeSecondary, 15%);
   }
 } //end nav
 
 /* ------------------------- main ------------------------- */
 main {
-  background-color: #FFF;
+  background-color: #fff;
 
   h3 {
     line-height: 120%;
+    font-size: 2rem;
     color: $pokeFontColor;
-    margin: 1rem $gutter;
+    margin: 2rem $gutter;
   }
 
   hr.fadeAway {
@@ -96,7 +108,7 @@ main {
     align-items: center;
     width: 200px;
     height: 260px;
-    
+
     border-radius: 3px;
     perspective: 600px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -109,7 +121,6 @@ main {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
-    
   }
 
   .card.is-flipped {
@@ -193,8 +204,6 @@ main {
     color: lighten($pokeFontColor, 25%);
     background-color: darken($pokePrimary, 15%);
   }
-  
-
 } // end main
 
 /* ------------------------- footer ------------------------- */
