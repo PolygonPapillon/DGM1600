@@ -8,13 +8,13 @@ request.onload = function() {
   let pokedata = request.response;
   console.log(pokedata);
   populateDOM(pokedata);
+  loadButton(pokedata);
 };
 
-let mainArea = document.querySelector("main");
+let cardArea = document.querySelector(".cardsHere");
 
 function populateDOM(allPokemon) {
   for (let i = 0; i < 30; i++) {
-
     let pokeScene = document.createElement("section");
     let pokeCard = document.createElement("article");
     let pokeFront = document.createElement("div");
@@ -33,7 +33,7 @@ function populateDOM(allPokemon) {
 
     pokeScene.appendChild(pokeCard);
 
-    mainArea.appendChild(pokeScene);
+    cardArea.appendChild(pokeScene);
 
     pokeCard.addEventListener("click", function() {
       pokeCard.classList.toggle("is-flipped");
@@ -46,8 +46,11 @@ function makeCardFront(pokeFront, aPokemon, arrayCount) {
   let pokeName = document.createElement("h1");
   let pokeHP = document.createElement("p");
 
+  pokePic.setAttribute("class", "bigPic");
+
   pokeName.textContent = aPokemon[arrayCount].name.english;
-  pokeHP.textContent = "HP for this Pokemon is: " + aPokemon[arrayCount].base.HP;
+  pokeHP.textContent =
+    "HP for this Pokemon is: " + aPokemon[arrayCount].base.HP;
 
   let pokeNum = getPokePic(aPokemon[arrayCount].id);
 
@@ -74,14 +77,11 @@ function makeCardBack(pokeBack, aPokemon, arrayCount) {
   pokeType.textContent = "Type(s):";
   pokeBack.appendChild(pokeType);
 
-  //typeList.textContent = aPokemon[arrayCount].type;
-  
-  
   // listing the type(s) of each pokemon
   for (let j = 0; j < aPokemon[arrayCount].type.length; j++) {
-    let listItem = document.createElement("li")
-    listItem.textContent = aPokemon[arrayCount].type[j]
-    typeList.appendChild(listItem)
+    let listItem = document.createElement("li");
+    listItem.textContent = aPokemon[arrayCount].type[j];
+    typeList.appendChild(listItem);
   }
   pokeBack.appendChild(typeList);
 

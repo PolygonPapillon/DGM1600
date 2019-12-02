@@ -41,37 +41,57 @@ div#navWrapper { background-color: red; }
 
 nav { background-color: grey; }
 
-nav button { margin: 10px 2%; text-align: center; font-weight: 700; padding: 0.5rem; color: blue; border-radius: 10px; text-decoration: none; background-color: red; border: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
+nav button { margin: 10px 2%; text-align: center; font-size: .8rem; font-weight: 700; padding: 0.5rem; color: #8080ff; border-radius: 10px; text-decoration: none; background-color: maroon; border: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
 
-nav button:hover { color: red; background-color: blue; }
+nav button:hover { color: #ffd280; background-color: #0000b3; }
 
 /* ------------------------- main ------------------------- */
-main h1 { font-size: 4rem; margin: 1rem 2%; padding: 10px; color: blue; }
+main { background-color: #FFF; }
 
-main p { line-height: 120%; color: orange; margin: 1rem; }
-
-main img { max-width: 180px; }
+main h3 { line-height: 120%; color: orange; margin: 1rem 2%; }
 
 main hr.fadeAway { background: -webkit-gradient(linear, left top, right top, from(#ffc900), to(rgba(255, 201, 0, 0))); background: linear-gradient(to right, #ffc900 0%, rgba(255, 201, 0, 0) 100%); height: 4px; border: none; margin: 2rem 2%; }
 
-main .scene { width: 200px; height: 260px; border: 1px solid grey; margin: 40px 2%; -webkit-perspective: 600px; perspective: 600px; }
+main .cardsHere { display: -ms-grid; display: grid; -ms-grid-columns: (minmax(200px, 1fr))[auto-fit]; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; max-width: 75rem; width: 96%; margin-right: 2%; margin-left: 2%; margin-top: 0; margin-bottom: 5rem; }
+
+main .scene { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 200px; height: 260px; border-radius: 3px; -webkit-perspective: 600px; perspective: 600px; -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 main .card { width: 100%; height: 100%; -webkit-transition: -webkit-transform 1s; transition: -webkit-transform 1s; transition: transform 1s; transition: transform 1s, -webkit-transform 1s; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; cursor: pointer; position: relative; }
 
 main .card.is-flipped { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
 
-main .card__face { position: absolute; width: 100%; height: 100%; color: pokeFontColor; text-align: center; font-weight: bold; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+main .card__face { position: absolute; width: 100%; height: 100%; text-align: center; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 
-main .card__face--front { background: red; }
+main .card__face--front { background: #ffd280; border: 5px solid orange; }
 
-main .card__face--back { background: grey; -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
+main .card__face--front h1 { font-size: 2.1rem; padding: 2px; color: #805300; }
+
+main .card__face--front p { line-height: 120%; color: #805300; }
+
+main .card__face--back { background: #8080ff; -webkit-transform: rotateY(180deg); transform: rotateY(180deg); padding-top: 10px; border: 5px solid blue; }
+
+main .card__face--back img { padding: 5px; height: 100px; }
+
+main .card__face--back h2 { padding: 3px 0; font-size: 1.2rem; color: #0000b3; }
+
+main .card__face--back ul { color: #0000b3; font-size: 1.2rem; }
+
+main .card__face--back ul li { padding-top: 3px; font-size: 1rem; }
+
+main .card__face--back p { font-size: 1rem; color: blue; padding-top: 0.3rem; }
+
+main .bigPic { max-height: 180px; margin-top: 10px; }
+
+main button { margin: 10px 0 30px 2%; text-align: center; font-size: 1.1rem; font-weight: 700; padding: 0.8rem; color: #8080ff; border-radius: 10px; text-decoration: none; background-color: maroon; border: none; -webkit-transition: background 0.75s ease, color 0.75s ease; transition: background 0.75s ease, color 0.75s ease; }
+
+main button:hover { color: #ffd280; background-color: #0000b3; }
 
 /* ------------------------- footer ------------------------- */
-div#footerWrapper { background-color: blue; }
+div#footerWrapper { background-color: blue; border-top: 5px solid grey; }
 
-footer { width: 100%; border-top: 5px solid grey; }
+footer { width: 100%; border-top: 5px solid red; }
 
-footer p { text-align: center; color: red; padding: 0.75rem 0; font-size: 0.9rem; }
+footer p { text-align: center; color: orange; padding: 0.75rem 0; font-size: 0.9rem; }
 
 /* Stay open (don't collapse) */
 .stayopen:after { content: ""; display: table; clear: both; }
@@ -79,7 +99,7 @@ footer p { text-align: center; color: red; padding: 0.75rem 0; font-size: 0.9rem
 /* media query */
 @media only screen and (min-width: 60rem) { body { padding: 0; background-image: url(../images/sayagata-400px-pattern.png); }
   header, nav, main, footer { max-width: 75rem; margin: 0 auto; }
-  div#wrapper { max-width: 75rem; margin: 0 auto; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000; background-color: #FFF; height: 100vh; }
+  div#wrapper { max-width: 75rem; margin: 0 auto; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000; background-color: #FFF; }
   header { margin-top: 0px; }
   footer { margin-bottom: 0px; } }
 

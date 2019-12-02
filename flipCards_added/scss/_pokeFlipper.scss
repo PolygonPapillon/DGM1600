@@ -20,7 +20,6 @@ body {
 
 /* ------------------------- header ------------------------- */
 header {
-  
   h1 {
     font-size: 2.2rem;
     padding: 1.5rem $gutter;
@@ -37,46 +36,35 @@ div#navWrapper {
 nav {
   background-color: $pokeAccent;
 
-  
   button {
     //display: block;
     margin: 10px $gutter;
     text-align: center;
+    font-size: .8rem;
     font-weight: $boldWeight;
     padding: 0.5rem;
-    color: $pokePrimary;
+    color: lighten($pokePrimary, 25%);
     border-radius: 10px;
     text-decoration: none;
-    background-color: $pokeSecondary;
+    background-color: darken($pokeSecondary, 25%);
     border: none;
     transition: background 0.75s ease, color 0.75s ease;
   }
 
   button:hover {
-    color: $pokeSecondary;
-    background-color: $pokePrimary;
+    color: lighten($pokeFontColor, 25%);
+    background-color: darken($pokePrimary, 15%);
   }
- 
 } //end nav
 
 /* ------------------------- main ------------------------- */
 main {
+  background-color: #FFF;
 
-  h1 {
-    font-size: 4rem;
-    margin: 1rem $gutter;
-    padding: 10px;
-    color: $pokePrimary;
-  }
-
-  p {
+  h3 {
     line-height: 120%;
     color: $pokeFontColor;
-    margin: 1rem;
-  }
-
-  img {
-    max-width: 180px;
+    margin: 1rem $gutter;
   }
 
   hr.fadeAway {
@@ -90,12 +78,28 @@ main {
     margin: 2rem $gutter;
   }
 
+  .cardsHere {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    max-width: 75rem;
+    width: 100%-$dblgutter;
+    margin-right: $gutter;
+    margin-left: $gutter;
+    margin-top: 0;
+    margin-bottom: 5rem;
+  }
+
   .scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 200px;
     height: 260px;
-    border: 1px solid $pokeAccent;
-    margin: 40px $gutter;
+    
+    border-radius: 3px;
     perspective: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   .card {
@@ -105,6 +109,7 @@ main {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
+    
   }
 
   .card.is-flipped {
@@ -115,42 +120,99 @@ main {
     position: absolute;
     width: 100%;
     height: 100%;
-    //line-height: 120%;
-    color: pokeFontColor;
     text-align: center;
-    font-weight: bold;
-    //font-size: 4rem;
     backface-visibility: hidden;
   }
 
   .card__face--front {
-    background: $pokeSecondary;
+    background: lighten($pokeFontColor, 25%);
+    h1 {
+      font-size: 2.1rem;
+      padding: 2px;
+      color: darken($pokeFontColor, 25%);
+    }
+    p {
+      line-height: 120%;
+      color: darken($pokeFontColor, 25%);
+      //margin: 1rem;
+    }
+    border: 5px solid $pokeFontColor;
   }
 
   .card__face--back {
-    background: $pokeAccent;
+    background: lighten($pokePrimary, 25%);
     transform: rotateY(180deg);
+    img {
+      padding: 5px;
+      height: 100px;
+    }
+    h2 {
+      padding: 3px 0;
+      font-size: 1.2rem;
+      color: darken($pokePrimary, 15%);
+    }
+    ul {
+      color: darken($pokePrimary, 15%);
+      font-size: 1.2rem;
+      li {
+        padding-top: 3px;
+        font-size: 1rem;
+      }
+    }
+    p {
+      font-size: 1rem;
+      color: $pokePrimary;
+      padding-top: 0.3rem;
+    }
+    padding-top: 10px;
+    border: 5px solid $pokePrimary;
   }
+
+  .bigPic {
+    max-height: 180px;
+    margin-top: 10px;
+    //padding: 10px;
+  }
+
+  button {
+    //display: block;
+    margin: 10px 0 30px $gutter;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: $boldWeight;
+    padding: 0.8rem;
+    color: lighten($pokePrimary, 25%);
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: darken($pokeSecondary, 25%);
+    border: none;
+    transition: background 0.75s ease, color 0.75s ease;
+  }
+
+  button:hover {
+    color: lighten($pokeFontColor, 25%);
+    background-color: darken($pokePrimary, 15%);
+  }
+  
+
 } // end main
 
 /* ------------------------- footer ------------------------- */
 div#footerWrapper {
   background-color: $pokePrimary;
+  border-top: 5px solid $pokeAccent;
 }
 footer {
   width: 100%;
-  border-top: 5px solid $pokeAccent;
+  border-top: 5px solid $pokeSecondary;
 
   p {
     text-align: center;
-    color: $pokeSecondary;
+    color: $pokeFontColor;
     padding: 0.75rem 0;
     font-size: 0.9rem;
   }
 }
-
-
-
 
 /* Stay open (don't collapse) */
 .stayopen:after {
