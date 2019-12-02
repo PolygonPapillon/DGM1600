@@ -119,9 +119,10 @@ document.querySelector(".anotha").addEventListener("click", () => {
       ""
     )
   );
-  if (!aPokeNumber > 0 && !aPokeNumber < 809) {
+  if (aPokeNumber < 0 || aPokeNumber > 809) {
     alert("That Pokemon does not exist. Please enter a different one.");
-  }
+    return
+  } else {
   let requestURL =
     "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json";
   let request = new XMLHttpRequest();
@@ -132,5 +133,5 @@ document.querySelector(".anotha").addEventListener("click", () => {
     let pokedata = request.response;
     let arrayCount = aPokeNumber - 1;
     makeCard(pokedata, arrayCount);
-  };
+  };}
 });
