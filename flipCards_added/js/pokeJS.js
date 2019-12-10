@@ -6,13 +6,14 @@ request.responseType = "json";
 request.send();
 request.onload = function() {
   let pokedata = request.response;
-  console.log(pokedata);
+  //console.log(pokedata);
 
   populateDOM(pokedata);
 };
 
 let cardArea = document.querySelector(".cardsHere");
 
+// call the 1st 30 pokemon
 function populateDOM(allPokemon) {
   for (let i = 0; i < 30; i++) {
     makeCard(allPokemon, i);

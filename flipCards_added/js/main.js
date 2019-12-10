@@ -1,11 +1,11 @@
-import { films } from './sourceJS/films.js'
-import { people } from './sourceJS/people.js'
-import { planets } from './sourceJS/planets.js'
-import { species } from './sourceJS/species.js'
-import { starships } from './sourceJS/starships.js'
-import { vehicles } from './sourceJS/vehicles.js'
+import { films } from "./sourceJS/films.js";
+import { people } from "./sourceJS/people.js";
+import { planets } from "./sourceJS/planets.js";
+import { species } from "./sourceJS/species.js";
+import { starships } from "./sourceJS/starships.js";
+import { vehicles } from "./sourceJS/vehicles.js";
 
-let mainArea = document.querySelector("main")
+let mainArea = document.querySelector("main");
 
 /* function swapStyleSheet(sheet) {
     document.getElementById("pagestyle").setAttribute("href", sheet);  
@@ -43,11 +43,10 @@ var toggleTheme = function(themeName) {
 
 //mainArea.appendChild(styleToggle)
 
-
-/* films.forEach(function(film) {
-    let filmDiv =document.createElement("div")
-    let filmTitle =document.createElement("h1")
-    let filmCrawl =document.createElement("p")
+films.forEach(function(film) {
+    let filmDiv = document.createElement("div")
+    let filmTitle = document.createElement("h1")
+    let filmCrawl = document.createElement("p")
 
     filmTitle.textContent = film.title
     filmCrawl.textContent = film.opening_crawl
@@ -56,42 +55,36 @@ var toggleTheme = function(themeName) {
     filmDiv.appendChild(filmCrawl)
 
     mainArea.appendChild(filmDiv)
-}); */
+});
 
 people.forEach(function(person) {
-    let personDiv = document.createElement("div")
-    let name = document.createElement("h1")
-    //let homeworld = document.createElement("h3")
-    let pic = document.createElement("img")
+  let personDiv = document.createElement("div");
+  let name = document.createElement("h1");
+  //let homeworld = document.createElement("h3")
+  let pic = document.createElement("img");
 
-    personDiv.appendChild(name)
-    //personDiv.appendChild(homeworld)
-    personDiv.appendChild(pic)
+  name.textContent = person.name;
 
-    
+  //let webNum = getWebNumber(person.homeworld)
+  //homeworld.textContent = person.homeworld
 
-    name.textContent = person.name
+  let webNum = getWebNumber(person.url);
+  pic.src = `https://starwars-visualguide.com/assets/img/characters/${webNum}.jpg`;
 
-    //let webNum = getWebNumber(person.homeworld)
-    //homeworld.textContent = person.homeworld
+  personDiv.appendChild(name);
+  //personDiv.appendChild(homeworld)
+  personDiv.appendChild(pic);
 
-    let webNum = getWebNumber(person.url)
-    pic.src = `https://starwars-visualguide.com/assets/img/characters/${webNum}.jpg`
- 
-
-
-    mainArea.appendChild(personDiv)
-
-
+  mainArea.appendChild(personDiv);
 });
 
 function getWebNumber(webURL) {
-    let end = webURL.lastIndexOf('/')
-    let webID = webURL.substring(end -2, end)
-    if (webID.indexOf('/') !== -1 ) {
-        return webID.slice(1,2)
-    } else {
-        console.log(webID)
-        return webID
-    }
+  let end = webURL.lastIndexOf("/");
+  let webID = webURL.substring(end - 2, end);
+  if (webID.indexOf("/") !== -1) {
+    return webID.slice(1, 2);
+  } else {
+    console.log(webID);
+    return webID;
+  }
 }
