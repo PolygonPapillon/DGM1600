@@ -1,0 +1,26 @@
+
+
+body {padding: 0; background-image: url(../images/sayagata-400px-pattern.png)}
+header, nav, main, footer {max-width: 75rem; margin: 0 auto;}
+
+div#wrapper {
+    max-width: 75rem;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #000;
+    background-color: #FFF;
+}
+
+nav {
+    ul {
+        margin-left: $gutter;
+        border-left: 1px solid rgba(0,0,0,0.3);
+    }
+    ul li {width: auto;}
+    ul li a {
+        padding: .5rem 1rem;
+    }
+} // end nav
+
+//no changes to main
+
+ // end main

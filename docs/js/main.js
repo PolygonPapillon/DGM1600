@@ -1,9 +1,9 @@
-import { films } from "./sourceJS/films.js";
-import { people } from "./sourceJS/people.js";
-import { planets } from "./sourceJS/planets.js";
-import { species } from "./sourceJS/species.js";
-import { starships } from "./sourceJS/starships.js";
-import { vehicles } from "./sourceJS/vehicles.js";
+import { films } from "./sourceJS/films.js.js";
+import { people } from "./sourceJS/people.js.js";
+import { planets } from "./sourceJS/planets.js.js";
+import { species } from "./sourceJS/species.js.js";
+import { starships } from "./sourceJS/starships.js.js";
+import { vehicles } from "./sourceJS/vehicles.js.js";
 
 let mainArea = document.querySelector("main");
 

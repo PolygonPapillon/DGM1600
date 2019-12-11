@@ -1,0 +1,157 @@
+/* Prevent adjustments of font size afer orientation changes in IE on Windows Phone and in iOS */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%}
+
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* body stlyings */
+body {
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    font-size: 16px;
+}
+
+
+/* ------------------------- navigation ------------------------- */
+div#navWrapper {background-color: $secondaryColor; width: 100%;}
+nav#navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+nav {
+
+    background-color: $secondaryColor;
+    ul li {
+        float: left;
+        width: 25%;
+        border-right: 1px solid rgba(0,0,0,0.3);
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+    ul li:last-child {border-right: 1px solid rgba(0,0,0,0.3);}
+    ul li a {
+        display: block;
+        text-align: center;
+        font-weight: $boldWeight;
+        padding: .5rem 0;
+        color: $primaryColor;
+        text-decoration: none;
+        transition: background 0.75s ease, color 0.75s ease;
+    }
+    
+
+    ul li a:hover {
+        color: $secondaryColor;
+        background-color: $primaryColor;
+    }
+    ul li.active a  {
+        background-color: darken($secondaryColor, 15%);
+    }    
+    
+    
+} //end nav
+
+
+
+/* ------------------------- main ------------------------- */
+main {
+    
+    div#welcome-section {
+        width: 100%;
+        height: 100vh;
+        background-image: url(../images/early-world-map.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        h1 {
+            text-align: center; 
+            padding-top: 40%; 
+            color: $secondaryColor; 
+            text-shadow: -8px 8px 7px $fontColor;
+            font-size: 3.5rem;
+        }
+    }
+    
+
+    div.blocks {
+        margin: .5rem $gutter;
+        display: flex;
+        justify-content: space-around;
+        flex-flow: row wrap;
+        a {text-decoration: none; margin: .2rem; padding: 0;}
+    }
+    
+    figure.project-tile {
+        margin: .3rem;
+        max-width: 275px;
+        img {width: 100%;}
+        figcaption {
+            text-align: center;
+            color: darken($primaryColor, 15%);
+            text-decoration: none;
+            padding: 5px 0;
+            line-height: 120%;
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin: 1rem 0 0 $gutter;
+        color: $primaryColor;
+        padding: 10px 0;
+    }
+    
+    p {
+        line-height: 120%;
+        color: $fontColor;
+        margin: 1rem;
+    }
+    
+    hr.fadeAway {
+        background: linear-gradient(to right, rgba(255,201,0,1) 0%,rgba(255,201,0,0) 100%);
+        height: 4px;
+        border: none;
+        margin: 1.2rem $gutter;
+    }
+    
+      
+} // end main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------- footer ------------------------- */
+div#footerWrapper {background-color: $primaryColor;}
+footer {
+    width: 100%;
+    border-top: 5px solid $accent;
+    
+    p {
+        text-align: center;
+        color: $secondaryColor;
+        padding: .75rem 0;
+        font-size: .9rem;
+    }
+}
+
+
+
+
+/* Stay open (don't collapse) */
+.stayopen:after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -1,0 +1,10 @@
+@import "reset";
+
+@import "variables";
+
+@import "pokeFlipper";
+
+/* media query */
+@media only screen and (min-width: 60rem) {
+  @import "large-pokeFlipper";
+} /* end media query */

@@ -1,0 +1,175 @@
+<html>
+	<head>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+		<style>
+			#pad {
+				background:#def;
+				border: 1px solid #aaa;
+			}
+		</style>
+	</head>
+	<body>
+		<!--proof of concept jquery css example - code-->
+		The JQuery library uses either the <code>$()</code> or <code>JQuery()</code> function names.
+		
+		<!--types of elements-->
+		<blockquote>
+			JQuery is powerful and flexible
+		</blockquote>
+		
+		<!--ids-->
+		<div id='advert'>This is an ad</div>
+		
+		<!--classes-->
+		<p>This is my <span class='new'>new</span> website! </p>
+		
+		<!--BEYOND CSS-->
+		<!--a simple event-->
+		<button id = 'clickme'>Click Me!</button>
+		<p id='result'> I am a paragraph</p>
+		
+		<!--blur-->
+		<input id='first'> <input> <input> <input>
+		<br>
+		<br>
+		
+		<!--blur-->
+		<button class='myclass'>Button 1</button>
+		<button class='myclass'>Button 2</button>
+		<button class='myclass'>Button 3</button>
+		<button class='myclass'>Button 4</button>
+		<button class='myclass'>Button 5</button>
+		<br>
+		<br>
+		
+		<!--keypresses-->
+		<h2> Press some keys! </h2>
+		<div id='result2'></div>
+		<br>
+		
+		<!--Mouse movement-->
+		<h2>Mouse Handling</h2>
+		
+		<canvas id='pad' width='480' height='320'></canvas>
+		
+		<!--More Mouse Handling-->
+		<h2 id='ticklish'>Pass the Mouse over this line</h2>
+		
+		<!--Submit button-->
+		<form id='form'>
+		First name: <input id='fname' type='text' name='fname'><br>
+		Last name: <input id='lname' type='text' name='lname'><br>
+		<input type='submit'>
+		</form>
+		<br>		
+		
+		<!--hide and Show-->
+		<button id = 'hide'>Hide</button>
+		<button id = 'show'>Show</button>
+		<p id = 'text'>Click the 'Hide' and 'Show' buttons</p>
+		<br>
+		
+		<!--Toggle Method-->
+		<button id = 'toggle'>Toggle</button>
+		<p id = 'text2'>Click the Toggle button</p>
+		<br>
+		
+		<!--Fading-->
+		<button id='fadeout'>fadeOut</button>
+		<button id='fadein'>fadeIn</button>
+		<button id='fadetoggle'>fadeToggle</button>
+		<button id='fadeto'>fadeTo</button>
+		<p id = 'text3'>Click the 'Fade in' and 'Fade out' buttons</p>
+		<br>
+		
+		<!--****************************JS starts here*****************************-->
+		<script>
+			$('code').css('border', '1px solid #aaa');
+			$('blockquote').css('background', 'lime');
+			$('#advert').css('border', '3px dashed red');
+			$('.new').css('text-decoration','underline');
+			$('blockquote,#advert,.new').css('font-weight', 'bold');
+			
+			$('#clickme').click(function(){
+				$('#result').html('You clicked the button!');
+			})
+			
+			$('#first').focus()
+			$('input').focus(function() { $(this).css('background', '#ff0') } )
+			$('input') .blur(function() { $(this).css('background', '#aaa') } )
+			
+			//click and double click-sliding and vanishing
+			$('.myclass').click( function() { $(this).slideUp('slow') })
+			$('.myclass').dblclick( function() { $(this).hide() })
+			
+			// Creating alert for submit function
+			$('#form').submit(function()
+			{	
+				if ($('#fname').val() == '' ||
+				$('#lname').val() == '')
+				{
+				alert('Please enter both names')
+				return false
+				}
+			})
+			
+			//keypress results
+			$(document).keypress(function(event){
+				key = String.fromCharCode(event.which)
+				
+				if (key >= 'a' && key <= 'z' ||
+					key >= 'A' && key <= 'Z' ||
+					key >= '0' && key <= '9')
+				{
+					$('#result2').html("You pressed: " + key);
+					event.preventDefault()
+				}	
+			})
+			
+			//mouse tracking
+			canvas = $('#pad')[0];
+			context = canvas.getContext("2d");
+			pendown = false;
+			
+			$('#pad').mousemove(function(event){
+				var xpos = event.pageX - canvas.offsetLeft;
+				var ypos = event.pageY - canvas.offsetTop;
+				
+				if (pendown) context.lineTo(xpos, ypos)
+				else 		 context.moveTo(xpos, ypos)
+				
+				context.stroke()
+			})
+			
+			$('#pad').mousedown(function() {pendown = true});
+			$('#pad').mouseup(function() {pendown = false});
+			
+			$('#ticklish').mouseenter(function() {$(this).html('Hey, stop tickling!')});
+			$('#ticklish').mouseleave(function() {$(this).html('Hey, where did you go?')});
+						
+			//Hide and show buttons
+			$('#hide').click(function(){
+				$('#text').hide('slow','linear');
+			})
+			$('#show').click(function(){
+				$('#text').show('slow','linear');
+			})
+			
+			//Toggle Button
+			$('#toggle').click(function(){
+				$('#text2').toggle('slow','linear');
+			})
+			
+			//Fade in, Fade out, Fade toggle
+			$('#fadeout') .click(function() { $('#text3').fadeOut( 'slow' ) })
+			$('#fadein') .click(function() { $('#text3').fadeIn( 'slow' ) })
+			$('#fadetoggle').click(function() { $('#text3').fadeToggle('slow' ) })
+			$('#fadeto') .click(function() { $('#text3').fadeTo( 'slow', 0.5) })			
+			
+			
+		</script>
+		
+	
+	</body>
+
+</html>
