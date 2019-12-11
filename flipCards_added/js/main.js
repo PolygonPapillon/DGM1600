@@ -43,7 +43,7 @@ var toggleTheme = function(themeName) {
 
 //mainArea.appendChild(styleToggle)
 
-films.forEach(function(film) {
+/* films.forEach(function(film) {
     let filmDiv = document.createElement("div")
     let filmTitle = document.createElement("h1")
     let filmCrawl = document.createElement("p")
@@ -55,7 +55,7 @@ films.forEach(function(film) {
     filmDiv.appendChild(filmCrawl)
 
     mainArea.appendChild(filmDiv)
-});
+}); */
 
 people.forEach(function(person) {
   let personDiv = document.createElement("div");
